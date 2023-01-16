@@ -7,7 +7,7 @@ const Header = () => {
   }
 
   return (
-    <header style={headerStyle}>
+    <header >
       <h1
         style={{
           fontSize: '6rem',

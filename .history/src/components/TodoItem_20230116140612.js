@@ -7,26 +7,22 @@ class TodoItem extends React.Component {
   }
 
   handleEditing = () => {
-    this.setState({
-      editing: true,
-    })
+   this.setState({
+     editing: true,
+   })
   }
+  
 
-  handleUpdatedDone = (event) => {
-    if (event.key === 'Enter') {
-      this.setState({ editing: false })
-    }
+ render() {
+   
+  let viewMode = {}
+  let editMode = {}
+
+  if (this.state.editing) {
+    viewMode.display = 'none'
+  } else {
+    editMode.display = 'none'
   }
-
-  render() {
-    let viewMode = {}
-    let editMode = {}
-
-    if (this.state.editing) {
-      viewMode.display = 'none'
-    } else {
-      editMode.display = 'none'
-    }
     const { completed, id, title } = this.props.todo
 
     const completedStyle = {
@@ -34,6 +30,10 @@ class TodoItem extends React.Component {
       color: '#595959',
       opacity: 0.4,
       textDecoration: 'line-through',
+    }
+
+    handleUpdatedDone = (event) => {
+      console.log(event.key)
     }
 
     return (

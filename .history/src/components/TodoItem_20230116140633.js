@@ -13,9 +13,7 @@ class TodoItem extends React.Component {
   }
 
   handleUpdatedDone = (event) => {
-    if (event.key === 'Enter') {
-      this.setState({ editing: false })
-    }
+    console.log(event.key)
   }
 
   render() {
